@@ -1,0 +1,23 @@
+        echo "<table width="1800" border=1 align=center>";
+        echo "<tr>";
+        echo "<th>Nome</th>";
+        echo "<th>Descrizione</th>";
+		echo "<th>Squadra</th>"; 
+        echo "<th>Prezzo</th>";
+        echo "<th>Quantità</th>";
+		echo "<th>Immagine</th>"; 
+		echo "<th>Aggingi al carrello</th>"; 
+        echo "</tr>";
+        while ($row = mysqli_fetch_array($result))
+        {
+            echo "<tr width="10">";
+            echo "<td style=word-break:break-all;>$row[Nome]</td>";
+            echo "<td style=word-break:break-all;>$row[Descrizione]</td>";
+			echo "<td style=word-break:break-all;>$row[Squadra]</td>";
+            echo "<td style=word-break:break-all;>$row[Prezzo]€</td>";
+            echo "<td style=word-break:break-all;>$row[Quantita]</td>";
+			echo "<td style=word-break:break-all;> <img src=$row[Immagine] width=150 class=dx> </td>";
+			echo "<td width="10" > <a href=login.php>Aggiungi al Carrello</a> </td>";
+            echo "</tr>";
+        }
+echo "</table>";
